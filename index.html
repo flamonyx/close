@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anas update jap yer 🛠️</title>
+<style>
+  :root { --pink:#ff8fb8; --purple:#8b7bff; --yellow:#ffd86b; --mint:#7be0c3; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { height:100%; }
+  body {
+    font-family: "Trebuchet MS","Comic Sans MS","Segoe UI",system-ui,sans-serif;
+    background: linear-gradient(135deg,#ffe3f0,#e4dcff,#d5f7ee,#fff3cf);
+    background-size: 400% 400%;
+    animation: bg 14s ease infinite;
+    display:flex; align-items:center; justify-content:center;
+    overflow:hidden; text-align:center; color:#3b2f63;
+  }
+  @keyframes bg { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+
+  .wrap { position:relative; z-index:2; padding:24px; }
+
+  /* mascot */
+  .blob {
+    width:130px; height:115px; margin:0 auto 18px; position:relative;
+    background: linear-gradient(160deg,var(--pink),var(--purple));
+    border-radius: 50% 50% 46% 46% / 55% 55% 45% 45%;
+    box-shadow: 0 14px 0 rgba(139,123,255,.18), inset -8px -10px 0 rgba(0,0,0,.06);
+    animation: bounce 1.6s ease-in-out infinite;
+  }
+  .blob::before,.blob::after { /* ears */
+    content:""; position:absolute; top:-14px; width:34px; height:34px;
+    background:inherit; border-radius:50% 50% 10% 50%; z-index:-1;
+  }
+  .blob::before { left:14px; transform:rotate(-20deg); }
+  .blob::after  { right:14px; transform:rotate(80deg); }
+  .eye { position:absolute; top:42px; width:16px; height:22px; background:#2b2150; border-radius:50%;
+         animation: blink 4s infinite; }
+  .eye::after { content:""; position:absolute; top:4px; left:4px; width:6px; height:6px; background:#fff; border-radius:50%; }
+  .eye.l { left:32px } .eye.r { right:32px }
+  .cheek { position:absolute; top:66px; width:18px; height:11px; background:#ff6f9f; opacity:.55; border-radius:50%; }
+  .cheek.l { left:15px } .cheek.r { right:15px }
+  .mouth { position:absolute; left:50%; top:68px; width:20px; height:10px; margin-left:-10px;
+           border-bottom:4px solid #2b2150; border-radius:0 0 20px 20px; }
+  @keyframes bounce { 0%,100%{transform:translateY(0) scale(1,1)} 45%{transform:translateY(-26px) scale(.96,1.05)} 55%{transform:translateY(-26px) scale(.96,1.05)} 90%{transform:translateY(0) scale(1.08,.92)} }
+  @keyframes blink { 0%,92%,100%{transform:scaleY(1)} 95%{transform:scaleY(.1)} }
+
+  /* title */
+  h1 { font-size: clamp(2.6rem, 11vw, 7.5rem); line-height:1.05; font-weight:900; letter-spacing:-1px; }
+  h1 .line { display:block; }
+  h1 span.ch {
+    display:inline-block; animation: wave 1.8s ease-in-out infinite;
+    text-shadow: 0 5px 0 rgba(139,123,255,.25), 0 10px 20px rgba(139,123,255,.2);
+  }
+  h1 span.sp { width:.3em; }
+  h1 .c1 { color:var(--purple) } h1 .c2 { color:var(--pink) } h1 .c3 { color:#ffb020 } h1 .c4 { color:#2fc9a0 }
+  @keyframes wave { 0%,100%{transform:translateY(0) rotate(0)} 25%{transform:translateY(-14px) rotate(-4deg)} 75%{transform:translateY(4px) rotate(3deg)} }
+
+  .sub { margin-top:22px; font-size:clamp(1rem,3.4vw,1.5rem); font-weight:700; opacity:.85; }
+  .dots span { display:inline-block; animation: dot 1.2s infinite; font-size:1.6em; line-height:0; }
+  .dots span:nth-child(2){animation-delay:.2s} .dots span:nth-child(3){animation-delay:.4s}
+  @keyframes dot { 0%,80%,100%{opacity:.2; transform:translateY(0)} 40%{opacity:1; transform:translateY(-6px)} }
+
+  .bar { width:min(320px,70vw); height:14px; margin:20px auto 0; background:rgba(255,255,255,.7);
+         border-radius:99px; overflow:hidden; box-shadow:inset 0 2px 4px rgba(0,0,0,.08); }
+  .bar i { display:block; height:100%; width:40%; border-radius:99px;
+           background: repeating-linear-gradient(45deg,var(--pink) 0 12px,var(--yellow) 12px 24px);
+           animation: load 2.2s ease-in-out infinite alternate, stripes 1s linear infinite; background-size:34px 34px; }
+  @keyframes load { from{margin-left:0; width:25%} to{margin-left:0; width:100%} }
+  @keyframes stripes { to{background-position:34px 0} }
+
+  /* floating stuff */
+  .float { position:fixed; bottom:-60px; z-index:1; pointer-events:none; user-select:none;
+           animation: rise linear infinite; opacity:.85; }
+  @keyframes rise { to { transform: translateY(-115vh) rotate(360deg); } }
+
+  .gear { position:fixed; font-size:3rem; opacity:.25; z-index:1; animation: spin 6s linear infinite; }
+  .gear.g1 { top:8%; left:7% } .gear.g2 { bottom:10%; right:8%; animation-direction:reverse; font-size:4.5rem }
+  @keyframes spin { to{transform:rotate(360deg)} }
+
+  @media (prefers-reduced-motion: reduce) { *{animation-duration:.01ms !important; animation-iteration-count:1 !important} }
+</style>
+</head>
+<body>
+  <div class="gear g1">⚙️</div>
+  <div class="gear g2">⚙️</div>
+
+  <main class="wrap">
+    <div class="blob" aria-hidden="true">
+      <div class="eye l"></div><div class="eye r"></div>
+      <div class="cheek l"></div><div class="cheek r"></div>
+      <div class="mouth"></div>
+    </div>
+
+    <h1 id="title" aria-label="Anas update jap yer">
+      <span class="line" data-text="Anas" data-c="c1"></span>
+      <span class="line" data-text="update jap" data-c="c2"></span>
+      <span class="line" data-text="yer 🛠️" data-c="c3"></span>
+    </h1>
+
+    <p class="sub">Tengah kemas2 sikit, tunggu yer <span class="dots"><span>.</span><span>.</span><span>.</span></span></p>
+    <div class="bar"><i></i></div>
+  </main>
+
+<script>
+  // split title into bouncing letters
+  let n = 0;
+  document.querySelectorAll('#title .line').forEach(line => {
+    const cls = line.dataset.c;
+    [...line.dataset.text].forEach(c => {
+      const s = document.createElement('span');
+      s.className = 'ch ' + cls + (c === ' ' ? ' sp' : '');
+      s.innerHTML = c === ' ' ? '&nbsp;' : c;
+      s.style.animationDelay = (n++ * 0.08) + 's';
+      line.appendChild(s);
+    });
+  });
+
+  // floating cute things
+  const stuff = ['💖','✨','⭐','🫧','🌸','💜','🛠️','☁️','🍡'];
+  for (let i = 0; i < 22; i++) {
+    const el = document.createElement('div');
+    el.className = 'float';
+    el.textContent = stuff[Math.floor(Math.random()*stuff.length)];
+    el.style.left = Math.random()*100 + 'vw';
+    el.style.fontSize = (1 + Math.random()*1.8) + 'rem';
+    el.style.animationDuration = (9 + Math.random()*10) + 's';
+    el.style.animationDelay = (-Math.random()*18) + 's';
+    document.body.appendChild(el);
+  }
+
+  // click / tap = confetti pop
+  document.addEventListener('pointerdown', e => {
+    for (let i = 0; i < 8; i++) {
+      const p = document.createElement('div');
+      p.textContent = stuff[Math.floor(Math.random()*stuff.length)];
+      Object.assign(p.style, { position:'fixed', left:e.clientX+'px', top:e.clientY+'px', fontSize:'1.4rem',
+        pointerEvents:'none', zIndex:5, transition:'transform .9s ease-out, opacity .9s' });
+      document.body.appendChild(p);
+      const a = Math.random()*Math.PI*2, d = 50 + Math.random()*90;
+      requestAnimationFrame(() => {
+        p.style.transform = `translate(${Math.cos(a)*d}px, ${Math.sin(a)*d}px) rotate(${Math.random()*360}deg)`;
+        p.style.opacity = 0;
+      });
+      setTimeout(() => p.remove(), 950);
+    }
+  });
+</script>
+</body>
+</html>
